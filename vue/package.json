@@ -1,0 +1,40 @@
+{
+  "name": "trytest",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.22.0",
+    "core-js": "^3.6.5",
+    "echarts": "^5.2.1",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.1.9",
+    "vue": "^2.6.11",
+    "vue-echarts": "^6.0.0",
+    "vue-router": "^3.2.0",
+    "vuetify": "^2.5.9",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@mdi/font": "^6.3.95",
+    "@mdi/js": "^6.4.95",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/composition-api": "^1.3.0",
+    "vant": "^2.12.30",
+    "vee-validate": "^3.4.13",
+    "vue-cli-plugin-vuetify": "~2.4.2",
+    "vue-template-compiler": "^2.6.11",
+    "vuelidate": "^0.7.6"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
