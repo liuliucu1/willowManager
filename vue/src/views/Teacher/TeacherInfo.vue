@@ -97,7 +97,7 @@
                     :value="name"
                     filled
                     color="blue-grey lighten-2"
-                    label="Name"
+                    label="姓名"
                 ></v-text-field>
               </v-col>
               <v-col

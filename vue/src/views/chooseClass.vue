@@ -44,7 +44,7 @@
       </v-row>
       <v-row>
         <v-btn
-        @click="annotate">
+            @click="annotate">
           退出登录
         </v-btn>
       </v-row>
@@ -85,11 +85,20 @@ export default {
     },
     startClass: function () {
       this.judge();
+      var start1;
+      var end1;
+      if (this.dates[0] < this.dates[1]) {
+        start1 = this.dates[0];
+        end1 = this.dates[1];
+      } else {
+        start1 = this.dates[1];
+        end1 = this.dates[0];
+      }
       if (this.silly) {
         this.$axios.get('http://localhost:8800/setStart', {
           params: {
-            startTime: this.dates[0],
-            endTime: this.dates[1]
+            startTime: start1,
+            endTime: end1
           }
         }).then(
             res => {
@@ -112,7 +121,7 @@ export default {
 
     },
     endClass: function () {
-      this.$axios.get('http://localhost:8800/setStart').then(
+      this.$axios.get('http://localhost:8800/endChoose').then(
           res => {
             sweet.fire({
               title: '取消成功',
@@ -125,6 +134,7 @@ export default {
     },
     annotate: function () {
       this.$store.commit("REMOVE_INFO");
+      this.$store.commit("")
       this.$router.push("/login");
     },
   }

@@ -4,249 +4,249 @@
     <template>
 
       <div style="position: absolute;top: 20%;left: 10%;">
-        <v-img src="../assets/smile.png"style="width: 50px;"></v-img>
-      </div >
+        <v-img src="../assets/smile.png" style="width: 50px;"></v-img>
+      </div>
       <h1 class="ic" style="position: absolute;top: 20%;left: 15%;">
         Willow
       </h1>
 
-<div style="position: absolute;top: 30%;left: 20%;width: 700px;">
+      <div style="position: absolute;top: 30%;left: 20%;width: 700px;">
 
-      <v-form
-          ref="form"
-          v-model="valid"
-          lazy-validation
-      >
-        <v-text-field
-            v-model="account"
-            :counter="20"
-            :value="account"
-            :rules="accountRules"
-            label="账号"
-            required
-        ></v-text-field>
+        <v-form
+            ref="form"
+            v-model="valid"
+            lazy-validation
+        >
+          <v-text-field
+              v-model="account"
+              :counter="20"
+              :value="account"
+              :rules="accountRules"
+              label="账号"
+              required
+          ></v-text-field>
 
-        <v-text-field
-            :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-            :type="show3 ? 'text' : 'password'"
-            name="input-10-2"
-            value="wqfasds"
-            class="input-group--focused"
-            @click:append="show3 = !show3"
-            v-model="password"
-            :rules="passwordRules"
-            :value="password"
-            :property="password"
-            label="密码"
-            required
-        ></v-text-field>
-        <v-row class="btn-center">
-          <v-btn
-              id="mm"
-              color="success"
-              class="mr-4"
-              @click="validate"
-          >
-            登录
-          </v-btn>
+          <v-text-field
+              :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="show3 ? 'text' : 'password'"
+              name="input-10-2"
+              value="wqfasds"
+              class="input-group--focused"
+              @click:append="show3 = !show3"
+              v-model="password"
+              :rules="passwordRules"
+              :value="password"
+              :property="password"
+              label="密码"
+              required
+          ></v-text-field>
+          <v-row class="btn-center">
+            <v-btn
+                id="mm"
+                color="success"
+                class="mr-4"
+                @click="validate"
+            >
+              登录
+            </v-btn>
 
-          <v-btn
-              color="error"
-              class="mr-4"
-              @click="findPassword"
-          >
-            找回密码
-          </v-btn>
-
-
-        </v-row>
-
-        <v-row class="iv">
-          true
-        </v-row>
-        <v-row>
-          <template>
-            <v-row justify="center">
-              <v-dialog
-                  v-model="dialog2"
-                  persistent
-                  max-width="600px"
-              >
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                      class="btn-center"
-                      color="yellow"
-                      v-bind="attrs"
-                      v-on="on"
-                  >
-                    注册
-                  </v-btn>
-                </template>
-                <v-card>
-                  <v-card-text>
-                    <v-container>
-
-                      <v-text-field
-                          v-model="idcard"
-                          label="身份证号"
-                          :rules="[v => !!v || '请输入身份证号']"
-                          :value="idcard"
-                          required
-                      ></v-text-field>
+            <v-btn
+                color="error"
+                class="mr-4"
+                @click="findPassword"
+            >
+              找回密码
+            </v-btn>
 
 
-                      <v-text-field
-                          v-model="phone"
-                          :rules="phoneRules"
-                          label="手机号"
-                          :value="phone"
-                          requird
-                      ></v-text-field>
+          </v-row>
 
-                      <v-text-field
-                          v-model="mail"
-                          :rules="emailRules"
-                          label="邮箱"
-                          :value="mail"
-                          required
-                      ></v-text-field>
-                      <v-text-field
-                          v-model="name"
-                          label="姓名"
-                          :rules="[v => !!v || '请输入姓名']"
-                          :value="name"
-                          required
-                      ></v-text-field>
-                      <v-text-field
-                          v-model="address"
-                          label="地址"
-                          :rules="[v => !!v || '请输入地址（例：山东省济南市历下区山东大学软件学院）']"
-                          :value="address"
-                          required
-                      ></v-text-field>
-
-                      <v-text-field
-                          v-model="p"
-                          label="密码"
-                          :rules="[v => !!v || '请输入密码']"
-                          :value="p"
-                          required
-                      ></v-text-field>
-
-                      <v-select
-                          v-model="e7"
-                          :items="identiClass"
-                          label="我的课程"
-                          @change="setI"
-                          dense
-                          solo
-                          required
-                          chips
-                      ></v-select>
-                    </v-container>
-                  </v-card-text>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
+          <v-row class="iv">
+            true
+          </v-row>
+          <v-row>
+            <template>
+              <v-row justify="center">
+                <v-dialog
+                    v-model="dialog2"
+                    persistent
+                    max-width="600px"
+                >
+                  <template v-slot:activator="{ on, attrs }">
                     <v-btn
-                        color="blue darken-1"
-                        text
-                        @click="dialog2 = false"
+                        class="btn-center"
+                        color="yellow"
+                        v-bind="attrs"
+                        v-on="on"
                     >
-                      取消
+                      注册
                     </v-btn>
+                  </template>
+                  <v-card>
+                    <v-card-text>
+                      <v-container>
+
+                        <v-text-field
+                            v-model="idcard"
+                            label="身份证号"
+                            :rules="[v => !!v || '请输入身份证号']"
+                            :value="idcard"
+                            required
+                        ></v-text-field>
+
+
+                        <v-text-field
+                            v-model="phone"
+                            :rules="phoneRules"
+                            label="手机号"
+                            :value="phone"
+                            requird
+                        ></v-text-field>
+
+                        <v-text-field
+                            v-model="mail"
+                            :rules="emailRules"
+                            label="邮箱"
+                            :value="mail"
+                            required
+                        ></v-text-field>
+                        <v-text-field
+                            v-model="name"
+                            label="姓名"
+                            :rules="[v => !!v || '请输入姓名']"
+                            :value="name"
+                            required
+                        ></v-text-field>
+                        <v-text-field
+                            v-model="address"
+                            label="地址"
+                            :rules="[v => !!v || '请输入地址（例：山东省济南市历下区山东大学软件学院）']"
+                            :value="address"
+                            required
+                        ></v-text-field>
+
+                        <v-text-field
+                            v-model="p"
+                            label="密码"
+                            :rules="[v => !!v || '请输入密码']"
+                            :value="p"
+                            required
+                        ></v-text-field>
+
+                        <v-select
+                            v-model="e7"
+                            :items="identiClass"
+                            label="身份"
+                            @change="setI"
+                            dense
+                            solo
+                            required
+                            chips
+                        ></v-select>
+                      </v-container>
+                    </v-card-text>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="dialog2 = false"
+                      >
+                        取消
+                      </v-btn>
+                      <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="register"
+                      >
+                        确定
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
+              </v-row>
+            </template>
+          </v-row>
+
+          <v-row class="iv">
+            true
+          </v-row>
+          <v-row class="iv">
+            true
+          </v-row>
+          <v-row>
+            <template>
+              <v-row justify="center">
+                <v-dialog
+                    v-model="dialog"
+                    persistent
+                    max-width="600px"
+                >
+                  <template v-slot:activator="{ on, attrs }">
                     <v-btn
-                        color="blue darken-1"
-                        text
-                        @click="register"
+                        class="btn-center"
+                        color="yellow"
+                        v-bind="attrs"
+                        v-on="on"
                     >
-                      确定
+                      修改密码
                     </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-            </v-row>
-          </template>
-        </v-row>
+                  </template>
+                  <v-card>
+                    <v-card-text>
+                      <v-container>
 
-        <v-row class="iv">
-          true
-        </v-row>
-        <v-row class="iv">
-          true
-        </v-row>
-        <v-row>
-          <template>
-            <v-row justify="center">
-              <v-dialog
-                  v-model="dialog"
-                  persistent
-                  max-width="600px"
-              >
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                      class="btn-center"
-                      color="yellow"
-                      v-bind="attrs"
-                      v-on="on"
-                  >
-                    修改密码
-                  </v-btn>
-                </template>
-                <v-card>
-                  <v-card-text>
-                    <v-container>
-
-                      <v-text-field
-                          v-model="account2"
-                          :rules="accountRules"
-                          label="账号"
-                          :value="account2"
-                          required
-                      ></v-text-field>
+                        <v-text-field
+                            v-model="account2"
+                            :rules="accountRules"
+                            label="账号"
+                            :value="account2"
+                            required
+                        ></v-text-field>
 
 
-                      <v-text-field
-                          v-model="password2"
-                          :rules="passwordRules"
-                          label="旧密码"
-                          :value="password2"
-                          requird
-                      ></v-text-field>
+                        <v-text-field
+                            v-model="password2"
+                            :rules="passwordRules"
+                            label="旧密码"
+                            :value="password2"
+                            requird
+                        ></v-text-field>
 
-                      <v-text-field
-                          v-model="password3"
-                          :rules="passwordRules"
-                          label="新密码"
-                          :value="password3"
-                          required
-                      ></v-text-field>
-                    </v-container>
-                  </v-card-text>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn
-                        color="blue darken-1"
-                        text
-                        @click="dialog = false"
-                    >
-                      取消
-                    </v-btn>
-                    <v-btn
-                        color="blue darken-1"
-                        text
-                        @click="changePassword"
-                    >
-                      确定
-                    </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-            </v-row>
-          </template>
-        </v-row>
+                        <v-text-field
+                            v-model="password3"
+                            :rules="passwordRules"
+                            label="新密码"
+                            :value="password3"
+                            required
+                        ></v-text-field>
+                      </v-container>
+                    </v-card-text>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="dialog = false"
+                      >
+                        取消
+                      </v-btn>
+                      <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="changePassword"
+                      >
+                        确定
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
+              </v-row>
+            </template>
+          </v-row>
 
-      </v-form>
-</div>
+        </v-form>
+      </div>
 
     </template>
 
@@ -273,7 +273,7 @@ export default {
     name: '',
     identity: -1,
 
-    e7: 0,
+    e7: [],
     identiClass: [{text: '学生', value: 0}, {text: '教师', value: 1}],
     valid: true,
     show3: false,
@@ -317,7 +317,6 @@ export default {
               } else if (res.data.identify === 2) {
                 _this.$router.push("/open")
               } else {
-
                 swal.fire({
                   title: '登陆失败',
                   text: '请检查账号及密码',
@@ -374,7 +373,8 @@ export default {
     }
     ,
     setI: function () {
-      this.identity = this.e7.value;
+      this.identity = this.e7;
+
     },
     findPassword: async function () {
       const {value: password3} = await swal.fire({
@@ -459,6 +459,13 @@ export default {
                 icon: 'success',
                 showConfirmButton: true
               })
+              this.idcard='';
+              this.phone='';
+              this.p='';
+              this.mail='';
+              this.address='';
+              this.name='';
+              this.identity=-1;
             }
           }
       )
